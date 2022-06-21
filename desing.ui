@@ -6,14 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>360</width>
-    <height>700</height>
+    <width>568</width>
+    <height>804</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(99, 99, 99);</string>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
      <number>0</number>
@@ -38,7 +41,7 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="2,8">
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,6,2">
        <property name="leftMargin">
         <number>0</number>
        </property>
@@ -53,9 +56,15 @@
        </property>
        <item>
         <widget class="QFrame" name="frame_top">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>200</height>
+          </size>
+         </property>
          <property name="styleSheet">
-          <string notr="true">
-background-color: rgb(48, 23, 83);</string>
+          <string notr="true">background-color: rgb(18, 18, 18);
+font: 8pt &quot;Cascadia Code&quot;;</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -63,14 +72,24 @@ background-color: rgb(48, 23, 83);</string>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout">
+         <layout class="QVBoxLayout" name="verticalLayout_8" stretch="2,1">
           <item>
-           <widget class="QPushButton" name="bt_submit">
+           <widget class="QLabel" name="lb_title">
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(170, 170, 255);</string>
+             <string notr="true">color: rgb(188, 133, 252);</string>
             </property>
             <property name="text">
-             <string>Comprimir</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:26pt; font-weight:600;&quot;&gt;KOPIRI&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 170, 255);</string>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Convert JPG to WEPB for yout site web.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -78,29 +97,567 @@ background-color: rgb(48, 23, 83);</string>
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frame_booton">
+        <widget class="QFrame" name="frame_body">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(32, 32, 32);</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
+         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,4">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetDefaultConstraint</enum>
+          </property>
           <item>
-           <widget class="QTextEdit" name="textEdit"/>
-          </item>
-          <item>
-           <widget class="QPushButton" name="selectFileButton">
-            <property name="text">
-             <string>Select file or image</string>
+           <widget class="QFrame" name="frame_2">
+            <property name="maximumSize">
+             <size>
+              <width>350</width>
+              <height>16777215</height>
+             </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QCheckBox{
+	color: rgb(2, 218, 197);
+	font: 10pt &quot;Cascadia Code&quot;;
+}
+
+QLabel{
+	color: rgb(170, 85, 255);
+	font: 12pt &quot;Cascadia Code&quot;;
+	border-bottom: 2px solid  rgb(170, 85, 255);
+ 	
+}
+
+QPushButton{
+	color: rgb(9,9,9);
+	font: 12pt &quot;Cascadia Code&quot;;
+	 padding: 8px;
+	background-color:rgb(170, 85, 255);
+	border-radius: 5px;
+}
+
+</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4" stretch="4,2">
+             <item>
+              <widget class="QFrame" name="frame_3">
+               <property name="maximumSize">
+                <size>
+                 <width>350</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+	padding:5px 10px ;
+	background-color: rgb(45, 45, 45);
+	border-radius: 5px;
+
+QSlider {
+    border: 1px solid;
+    height: 10px;
+    margin: 20px;
+    }
+
+</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_5" stretch="2,1,0,0,0,0,0,0">
+                <item>
+                 <widget class="QLabel" name="lb_create_th">
+                  <property name="text">
+                   <string>Create Thumbnail</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="cb_th_sm">
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string>Small</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="cb_th_xm">
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string>Extra Small</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lb_quality">
+                  <property name="text">
+                   <string>Quality</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="cb_optimize">
+                  <property name="text">
+                   <string>Optimize</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frame_8">
+                  <property name="styleSheet">
+                   <string notr="true">QLabel{
+border:none;
+	color: rgb(2, 218, 197);
+}</string>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="8,1">
+                   <item>
+                    <widget class="QSlider" name="sd_optimize">
+                     <property name="minimum">
+                      <number>1</number>
+                     </property>
+                     <property name="maximum">
+                      <number>100</number>
+                     </property>
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="lb_optimize">
+                     <property name="text">
+                      <string>100</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_7">
+                  <property name="text">
+                   <string>weight max</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frame_7">
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="8,1">
+                   <item>
+                    <widget class="QSlider" name="sd_weight">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="lb_weight">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+border:none;
+	color: rgb(2, 218, 197);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>3333</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_4">
+               <property name="styleSheet">
+                <string notr="true">QFrame{
+	margin:4px;
+	background-color: rgb(45, 45, 45);
+	border-radius: 5px;
+}
+QPushButton:hover
+{
+   background-color:white;
+}</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_6">
+                <item>
+                 <widget class="QPushButton" name="selectFileButton">
+                  <property name="maximumSize">
+                   <size>
+                    <width>300</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Cascadia Code</family>
+                    <pointsize>10</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;Cascadia Code&quot;;
+background-color: rgb(144, 144, 144);
+border: 2px solid   rgb(255, 255, 255);</string>
+                  </property>
+                  <property name="text">
+                   <string>Select Image or Images</string>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>static/svg/filesadd.svg</normaloff>static/svg/filesadd.svg</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>25</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="bt_submit">
+                  <property name="font">
+                   <font>
+                    <family>Cascadia Code</family>
+                    <pointsize>12</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(144, 144, 144);
+border: 2px solid   rgb(255, 255, 255);
+margin:12px</string>
+                  </property>
+                  <property name="text">
+                   <string>Comprimir</string>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>static/svg/svgviewer-output.svg</normaloff>static/svg/svgviewer-output.svg</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>16</width>
+                    <height>16</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
           <item>
-           <widget class="QProgressBar" name="progressBar">
-            <property name="value">
-             <number>24</number>
+           <widget class="QFrame" name="frame_9">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
             </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <item>
+              <widget class="QTextEdit" name="txt_result">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(2, 218, 197);
+padding:5px</string>
+               </property>
+               <property name="html">
+                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7pt;&quot;&gt;hola&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_10">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit{
+	border:0 0 0 0;
+color: rgb(0, 170, 127);
+font:18px;
+}
+</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <item>
+                 <widget class="QLabel" name="lb_state">
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(188, 133, 252);
+font:14px</string>
+                  </property>
+                  <property name="text">
+                   <string>STATE:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="le_state">
+                  <property name="text">
+                   <string>success</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_bot">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(18, 18, 18);
+font: 8pt &quot;Cascadia Code&quot;;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="4">
+          <item>
+           <widget class="QFrame" name="frame_6">
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	color: rgb(9,9,9);
+	font: 8pt &quot;Cascadia Code&quot;;
+	 padding: 8px;
+
+	border-radius: 5px;
+	background-color: rgb(208, 102, 124);
+
+}
+</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout" stretch="4,2">
+             <item>
+              <widget class="QFrame" name="frame_11">
+               <property name="styleSheet">
+                <string notr="true">QProgressBar
+{
+    
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+
+    border-style: outset;
+    border-width: 2px;
+    border-color: #74c8ff;
+    border-radius: 7px;
+    text-align: center;
+}
+QProgressBar::chunk
+{
+    
+	background-color: rgb(2, 218, 197);
+}</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_9" stretch="3,1">
+                <item>
+                 <widget class="QProgressBar" name="progressBar">
+                  <property name="minimumSize">
+                   <size>
+                    <width>300</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="value">
+                   <number>24</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton">
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string>Limpiar</string>
+                  </property>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>static/svg/clear.svg</normaloff>static/svg/clear.svg</iconset>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_5">
+               <property name="minimumSize">
+                <size>
+                 <width>200</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>200</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+	color: rgb(2, 218, 197);
+	font:12px;
+	border:0 0 0 0
+}
+
+QLineEdit{
+	border:0 0 0 0;
+color: rgb(0, 170, 127);
+font:18px;
+}
+</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QGridLayout" name="gridLayout">
+                <item row="3" column="0">
+                 <widget class="QLabel" name="lb_wf">
+                  <property name="text">
+                   <string>Weight Final:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="lb_wi">
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string>Weight Initial:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLineEdit" name="le_reduce">
+                  <property name="text">
+                   <string>66.99%</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLineEdit" name="le_wf">
+                  <property name="text">
+                   <string>5000MB</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLineEdit" name="le_wi">
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string>7000MB</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="lb_reduce">
+                  <property name="text">
+                   <string>Reduce in:</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>

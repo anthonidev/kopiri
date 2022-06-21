@@ -2,7 +2,6 @@
 
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
-from PyQt5.QtCore import QTimer, QTime
 from PyQt5.uic import loadUi
 from src.script import compress_kopiri
 
@@ -16,14 +15,12 @@ class VentanaPrincipal(QMainWindow):
         self.bt_submit.clicked.connect(self.compress)
         self.fileName = []
 
-
-
     def openFileNamesDialog(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         files, _ = QFileDialog.getOpenFileNames(
             self, "QFileDialog.getOpenFileNames()", "", "All Files (*);;Python Files (*.py)", options=options)
-        
+
         if files:
             self.fileName = files
             self.textEdit.setText('\n'.join(files))
@@ -31,8 +28,8 @@ class VentanaPrincipal(QMainWindow):
     def compress(self):
         print(self.fileName)
         print(self.fileName[0])
-        compress_kopiri(self.fileName)
-        self.textEdit.setText("compressing")
+        compress_kopiri(self)
+        self.textEdit.setText('\n'"compressing")
 
 
 app = QApplication(sys.argv)
