@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>568</width>
-    <height>804</height>
+    <width>659</width>
+    <height>844</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -127,7 +127,7 @@ font: 8pt &quot;Cascadia Code&quot;;</string>
 
 QLabel{
 	color: rgb(170, 85, 255);
-	font: 12pt &quot;Cascadia Code&quot;;
+	font: 11pt &quot;Cascadia Code&quot;;
 	border-bottom: 2px solid  rgb(170, 85, 255);
  	
 }
@@ -159,17 +159,40 @@ QPushButton{
                </property>
                <property name="styleSheet">
                 <string notr="true">
-	padding:5px 10px ;
-	background-color: rgb(45, 45, 45);
-	border-radius: 5px;
 
 QSlider {
     border: 1px solid;
-    height: 10px;
-    margin: 20px;
+    height: 12px;
+  
     }
 
-</string>
+QFrame{
+padding:5px  ;
+background-color: rgb(45, 45, 45);
+border-radius: 5px;
+}
+
+QLabel{
+border-radius: 0;
+color:white;
+border-bottom:1px solid white;
+margin-bottom:5px;
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #565a5e;
+    height: 10px;
+    background: #eee;
+    margin: 0px;
+    border-radius: 4px;
+}
+QSlider::handle:horizontal {
+    background: rgb(2, 218, 197);
+    border: 1px solid #565a5e;
+    width: 24px;
+    height: 8px;
+    border-radius: 4px;
+}</string>
                </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
@@ -188,7 +211,7 @@ QSlider {
                 <item>
                  <widget class="QCheckBox" name="cb_th_sm">
                   <property name="styleSheet">
-                   <string notr="true"/>
+                   <string notr="true">background-color: rgb(45, 45, 45);</string>
                   </property>
                   <property name="text">
                    <string>Small</string>
@@ -201,7 +224,7 @@ QSlider {
                 <item>
                  <widget class="QCheckBox" name="cb_th_xm">
                   <property name="styleSheet">
-                   <string notr="true"/>
+                   <string notr="true">background-color: rgb(45, 45, 45);</string>
                   </property>
                   <property name="text">
                    <string>Extra Small</string>
@@ -219,16 +242,6 @@ QSlider {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QCheckBox" name="cb_optimize">
-                  <property name="text">
-                   <string>Optimize</string>
-                  </property>
-                  <property name="checked">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
-                <item>
                  <widget class="QFrame" name="frame_8">
                   <property name="styleSheet">
                    <string notr="true">QLabel{
@@ -242,14 +255,20 @@ border:none;
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="8,1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="9,1">
                    <item>
-                    <widget class="QSlider" name="sd_optimize">
+                    <widget class="QSlider" name="sd_quality">
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
                      <property name="minimum">
                       <number>1</number>
                      </property>
                      <property name="maximum">
                       <number>100</number>
+                     </property>
+                     <property name="value">
+                      <number>60</number>
                      </property>
                      <property name="orientation">
                       <enum>Qt::Horizontal</enum>
@@ -257,9 +276,20 @@ border:none;
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="lb_optimize">
+                    <widget class="QLabel" name="lb_quality_sd">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+border:none;
+	color: rgb(2, 218, 197);
+font: 8pt;
+margin:0;
+padding:0;
+}
+
+</string>
+                     </property>
                      <property name="text">
-                      <string>100</string>
+                      <string>60</string>
                      </property>
                     </widget>
                    </item>
@@ -267,7 +297,23 @@ border:none;
                  </widget>
                 </item>
                 <item>
+                 <widget class="QCheckBox" name="cb_optimize">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(45, 45, 45);</string>
+                  </property>
+                  <property name="text">
+                   <string>Optimize</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <widget class="QLabel" name="label_7">
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(255, 255, 255);</string>
+                  </property>
                   <property name="text">
                    <string>weight max</string>
                   </property>
@@ -281,9 +327,18 @@ border:none;
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="8,1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0">
                    <item>
                     <widget class="QSlider" name="sd_weight">
+                     <property name="minimum">
+                      <number>100000</number>
+                     </property>
+                     <property name="maximum">
+                      <number>450000</number>
+                     </property>
+                     <property name="value">
+                      <number>300000</number>
+                     </property>
                      <property name="orientation">
                       <enum>Qt::Horizontal</enum>
                      </property>
@@ -295,10 +350,15 @@ border:none;
                       <string notr="true">QLabel{
 border:none;
 	color: rgb(2, 218, 197);
-}</string>
+font: 8pt;
+margin:0;
+padding:0;
+}
+
+</string>
                      </property>
                      <property name="text">
-                      <string>3333</string>
+                      <string>300 KB</string>
                      </property>
                     </widget>
                    </item>
@@ -415,17 +475,35 @@ margin:12px</string>
             <layout class="QVBoxLayout" name="verticalLayout_7">
              <item>
               <widget class="QTextEdit" name="txt_result">
+               <property name="minimumSize">
+                <size>
+                 <width>340</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <property name="styleSheet">
-                <string notr="true">color: rgb(2, 218, 197);
-padding:5px</string>
+                <string notr="true">
+padding:5px;
+border:2px solid  rgb(85, 85, 85);
+border-radius: 5px;
+color: rgb(1, 127, 114);</string>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
                </property>
                <property name="html">
                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7pt;&quot;&gt;hola&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;&amp;gt;&amp;gt; CREATE FOR ANTHONI PORTOCARRERO -&amp;gt; &lt;/span&gt;&lt;a href=&quot;https://github.com/anthonidev/kopiri&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;Git Hub&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;............................................................................&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
@@ -460,7 +538,7 @@ font:14px</string>
                 <item>
                  <widget class="QLineEdit" name="le_state">
                   <property name="text">
-                   <string>success</string>
+                   <string>------</string>
                   </property>
                  </widget>
                 </item>
@@ -506,9 +584,12 @@ font: 8pt &quot;Cascadia Code&quot;;</string>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout" stretch="4,2">
+            <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,2">
              <item>
               <widget class="QFrame" name="frame_11">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QProgressBar
 {
@@ -526,6 +607,12 @@ QProgressBar::chunk
 {
     
 	background-color: rgb(2, 218, 197);
+}
+
+QFrame{
+padding:5px  ;
+background-color: rgb(45, 45, 45);
+border-radius: 5px;
 }</string>
                </property>
                <property name="frameShape">
@@ -535,6 +622,9 @@ QProgressBar::chunk
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_9" stretch="3,1">
+                <property name="leftMargin">
+                 <number>9</number>
+                </property>
                 <item>
                  <widget class="QProgressBar" name="progressBar">
                   <property name="minimumSize">
@@ -544,12 +634,12 @@ QProgressBar::chunk
                    </size>
                   </property>
                   <property name="value">
-                   <number>24</number>
+                   <number>0</number>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton">
+                 <widget class="QPushButton" name="bt_clear">
                   <property name="maximumSize">
                    <size>
                     <width>100</width>
@@ -560,11 +650,14 @@ QProgressBar::chunk
                    <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string>Limpiar</string>
+                   <string>Clear</string>
                   </property>
                   <property name="icon">
                    <iconset>
                     <normaloff>static/svg/clear.svg</normaloff>static/svg/clear.svg</iconset>
+                  </property>
+                  <property name="default">
+                   <bool>false</bool>
                   </property>
                  </widget>
                 </item>
@@ -575,7 +668,7 @@ QProgressBar::chunk
               <widget class="QFrame" name="frame_5">
                <property name="minimumSize">
                 <size>
-                 <width>200</width>
+                 <width>0</width>
                  <height>0</height>
                 </size>
                </property>
@@ -586,17 +679,28 @@ QProgressBar::chunk
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">QLabel{
-	color: rgb(2, 218, 197);
-	font:12px;
+                <string notr="true">QFrame{
+padding:5px  ;
+background-color: rgb(45, 45, 45);
+border-radius: 5px;
+}
+
+
+QLabel{
+	
+	color: rgb(255, 255, 255);
+	font:10px;
 	border:0 0 0 0
 }
 
 QLineEdit{
 	border:0 0 0 0;
-color: rgb(0, 170, 127);
-font:18px;
-}
+    color: rgb(0, 170, 127);
+    font:15px;
+background-color: rgb(45, 45, 45);
+	color: rgb(208, 102, 124);
+} 
+
 </string>
                </property>
                <property name="frameShape">
@@ -605,15 +709,8 @@ font:18px;
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
-               <layout class="QGridLayout" name="gridLayout">
-                <item row="3" column="0">
-                 <widget class="QLabel" name="lb_wf">
-                  <property name="text">
-                   <string>Weight Final:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <item>
                  <widget class="QLabel" name="lb_wi">
                   <property name="styleSheet">
                    <string notr="true"/>
@@ -623,34 +720,53 @@ font:18px;
                   </property>
                  </widget>
                 </item>
-                <item row="4" column="1">
-                 <widget class="QLineEdit" name="le_reduce">
-                  <property name="text">
-                   <string>66.99%</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="1">
-                 <widget class="QLineEdit" name="le_wf">
-                  <property name="text">
-                   <string>5000MB</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
+                <item>
                  <widget class="QLineEdit" name="le_wi">
                   <property name="styleSheet">
                    <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string>7000MB</string>
+                   <string>--</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                   </property>
                  </widget>
                 </item>
-                <item row="4" column="0">
+                <item>
+                 <widget class="QLabel" name="lb_wf">
+                  <property name="text">
+                   <string>Weight Final:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="le_wf">
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string>--</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <widget class="QLabel" name="lb_reduce">
                   <property name="text">
                    <string>Reduce in:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="le_reduce">
+                  <property name="text">
+                   <string>--</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                   </property>
                  </widget>
                 </item>

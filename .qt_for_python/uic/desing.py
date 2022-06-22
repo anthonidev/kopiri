@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(568, 804)
+        MainWindow.resize(659, 844)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("background-color: rgb(99, 99, 99);")
         self.centralwidget.setObjectName("centralwidget")
@@ -66,7 +66,7 @@ class Ui_MainWindow(object):
 "\n"
 "QLabel{\n"
 "    color: rgb(170, 85, 255);\n"
-"    font: 12pt \"Cascadia Code\";\n"
+"    font: 11pt \"Cascadia Code\";\n"
 "    border-bottom: 2px solid  rgb(170, 85, 255);\n"
 "     \n"
 "}\n"
@@ -88,17 +88,40 @@ class Ui_MainWindow(object):
         self.frame_3 = QtWidgets.QFrame(self.frame_2)
         self.frame_3.setMaximumSize(QtCore.QSize(350, 16777215))
         self.frame_3.setStyleSheet("\n"
-"    padding:5px 10px ;\n"
-"    background-color: rgb(45, 45, 45);\n"
-"    border-radius: 5px;\n"
 "\n"
 "QSlider {\n"
 "    border: 1px solid;\n"
-"    height: 10px;\n"
-"    margin: 20px;\n"
+"    height: 12px;\n"
+"  \n"
 "    }\n"
 "\n"
-"")
+"QFrame{\n"
+"padding:5px  ;\n"
+"background-color: rgb(45, 45, 45);\n"
+"border-radius: 5px;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"border-radius: 0;\n"
+"color:white;\n"
+"border-bottom:1px solid white;\n"
+"margin-bottom:5px;\n"
+"}\n"
+"\n"
+"QSlider::groove:horizontal {\n"
+"    border: 1px solid #565a5e;\n"
+"    height: 10px;\n"
+"    background: #eee;\n"
+"    margin: 0px;\n"
+"    border-radius: 4px;\n"
+"}\n"
+"QSlider::handle:horizontal {\n"
+"    background: rgb(2, 218, 197);\n"
+"    border: 1px solid #565a5e;\n"
+"    width: 24px;\n"
+"    height: 8px;\n"
+"    border-radius: 4px;\n"
+"}")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
@@ -108,22 +131,18 @@ class Ui_MainWindow(object):
         self.lb_create_th.setObjectName("lb_create_th")
         self.verticalLayout_5.addWidget(self.lb_create_th)
         self.cb_th_sm = QtWidgets.QCheckBox(self.frame_3)
-        self.cb_th_sm.setStyleSheet("")
+        self.cb_th_sm.setStyleSheet("background-color: rgb(45, 45, 45);")
         self.cb_th_sm.setChecked(True)
         self.cb_th_sm.setObjectName("cb_th_sm")
         self.verticalLayout_5.addWidget(self.cb_th_sm)
         self.cb_th_xm = QtWidgets.QCheckBox(self.frame_3)
-        self.cb_th_xm.setStyleSheet("")
+        self.cb_th_xm.setStyleSheet("background-color: rgb(45, 45, 45);")
         self.cb_th_xm.setChecked(True)
         self.cb_th_xm.setObjectName("cb_th_xm")
         self.verticalLayout_5.addWidget(self.cb_th_xm)
         self.lb_quality = QtWidgets.QLabel(self.frame_3)
         self.lb_quality.setObjectName("lb_quality")
         self.verticalLayout_5.addWidget(self.lb_quality)
-        self.cb_optimize = QtWidgets.QCheckBox(self.frame_3)
-        self.cb_optimize.setChecked(True)
-        self.cb_optimize.setObjectName("cb_optimize")
-        self.verticalLayout_5.addWidget(self.cb_optimize)
         self.frame_8 = QtWidgets.QFrame(self.frame_3)
         self.frame_8.setStyleSheet("QLabel{\n"
 "border:none;\n"
@@ -134,19 +153,36 @@ class Ui_MainWindow(object):
         self.frame_8.setObjectName("frame_8")
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.frame_8)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.sd_optimize = QtWidgets.QSlider(self.frame_8)
-        self.sd_optimize.setMinimum(1)
-        self.sd_optimize.setMaximum(100)
-        self.sd_optimize.setOrientation(QtCore.Qt.Horizontal)
-        self.sd_optimize.setObjectName("sd_optimize")
-        self.horizontalLayout_5.addWidget(self.sd_optimize)
-        self.lb_optimize = QtWidgets.QLabel(self.frame_8)
-        self.lb_optimize.setObjectName("lb_optimize")
-        self.horizontalLayout_5.addWidget(self.lb_optimize)
-        self.horizontalLayout_5.setStretch(0, 8)
+        self.sd_quality = QtWidgets.QSlider(self.frame_8)
+        self.sd_quality.setStyleSheet("")
+        self.sd_quality.setMinimum(1)
+        self.sd_quality.setMaximum(100)
+        self.sd_quality.setProperty("value", 60)
+        self.sd_quality.setOrientation(QtCore.Qt.Horizontal)
+        self.sd_quality.setObjectName("sd_quality")
+        self.horizontalLayout_5.addWidget(self.sd_quality)
+        self.lb_quality_sd = QtWidgets.QLabel(self.frame_8)
+        self.lb_quality_sd.setStyleSheet("QLabel{\n"
+"border:none;\n"
+"    color: rgb(2, 218, 197);\n"
+"font: 8pt;\n"
+"margin:0;\n"
+"padding:0;\n"
+"}\n"
+"\n"
+"")
+        self.lb_quality_sd.setObjectName("lb_quality_sd")
+        self.horizontalLayout_5.addWidget(self.lb_quality_sd)
+        self.horizontalLayout_5.setStretch(0, 9)
         self.horizontalLayout_5.setStretch(1, 1)
         self.verticalLayout_5.addWidget(self.frame_8)
+        self.cb_optimize = QtWidgets.QCheckBox(self.frame_3)
+        self.cb_optimize.setStyleSheet("background-color: rgb(45, 45, 45);")
+        self.cb_optimize.setChecked(True)
+        self.cb_optimize.setObjectName("cb_optimize")
+        self.verticalLayout_5.addWidget(self.cb_optimize)
         self.label_7 = QtWidgets.QLabel(self.frame_3)
+        self.label_7.setStyleSheet("color: rgb(255, 255, 255);")
         self.label_7.setObjectName("label_7")
         self.verticalLayout_5.addWidget(self.label_7)
         self.frame_7 = QtWidgets.QFrame(self.frame_3)
@@ -156,6 +192,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_7)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.sd_weight = QtWidgets.QSlider(self.frame_7)
+        self.sd_weight.setMinimum(100000)
+        self.sd_weight.setMaximum(450000)
+        self.sd_weight.setProperty("value", 300000)
         self.sd_weight.setOrientation(QtCore.Qt.Horizontal)
         self.sd_weight.setObjectName("sd_weight")
         self.horizontalLayout_4.addWidget(self.sd_weight)
@@ -163,11 +202,14 @@ class Ui_MainWindow(object):
         self.lb_weight.setStyleSheet("QLabel{\n"
 "border:none;\n"
 "    color: rgb(2, 218, 197);\n"
-"}")
+"font: 8pt;\n"
+"margin:0;\n"
+"padding:0;\n"
+"}\n"
+"\n"
+"")
         self.lb_weight.setObjectName("lb_weight")
         self.horizontalLayout_4.addWidget(self.lb_weight)
-        self.horizontalLayout_4.setStretch(0, 8)
-        self.horizontalLayout_4.setStretch(1, 1)
         self.verticalLayout_5.addWidget(self.frame_7)
         self.verticalLayout_5.setStretch(0, 2)
         self.verticalLayout_5.setStretch(1, 1)
@@ -235,8 +277,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.frame_9)
         self.verticalLayout_7.setObjectName("verticalLayout_7")
         self.txt_result = QtWidgets.QTextEdit(self.frame_9)
-        self.txt_result.setStyleSheet("color: rgb(2, 218, 197);\n"
-"padding:5px")
+        self.txt_result.setMinimumSize(QtCore.QSize(340, 0))
+        self.txt_result.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.txt_result.setStyleSheet("\n"
+"padding:5px;\n"
+"border:2px solid  rgb(85, 85, 85);\n"
+"border-radius: 5px;\n"
+"color: rgb(1, 127, 114);")
+        self.txt_result.setReadOnly(True)
         self.txt_result.setObjectName("txt_result")
         self.verticalLayout_7.addWidget(self.txt_result)
         self.frame_10 = QtWidgets.QFrame(self.frame_9)
@@ -289,6 +337,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.frame_6)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.frame_11 = QtWidgets.QFrame(self.frame_6)
+        self.frame_11.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.frame_11.setStyleSheet("QProgressBar\n"
 "{\n"
 "    \n"
@@ -305,70 +354,92 @@ class Ui_MainWindow(object):
 "{\n"
 "    \n"
 "    background-color: rgb(2, 218, 197);\n"
+"}\n"
+"\n"
+"QFrame{\n"
+"padding:5px  ;\n"
+"background-color: rgb(45, 45, 45);\n"
+"border-radius: 5px;\n"
 "}")
         self.frame_11.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_11.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_11.setObjectName("frame_11")
         self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.frame_11)
+        self.verticalLayout_9.setContentsMargins(9, -1, -1, -1)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
         self.progressBar = QtWidgets.QProgressBar(self.frame_11)
         self.progressBar.setMinimumSize(QtCore.QSize(300, 0))
-        self.progressBar.setProperty("value", 24)
+        self.progressBar.setProperty("value", 0)
         self.progressBar.setObjectName("progressBar")
         self.verticalLayout_9.addWidget(self.progressBar)
-        self.pushButton = QtWidgets.QPushButton(self.frame_11)
-        self.pushButton.setMaximumSize(QtCore.QSize(100, 16777215))
-        self.pushButton.setStyleSheet("")
+        self.bt_clear = QtWidgets.QPushButton(self.frame_11)
+        self.bt_clear.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.bt_clear.setStyleSheet("")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("c:\\Users\\Anthoni\\Desktop\\AuToPy\\static/svg/clear.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton.setIcon(icon2)
-        self.pushButton.setObjectName("pushButton")
-        self.verticalLayout_9.addWidget(self.pushButton)
+        self.bt_clear.setIcon(icon2)
+        self.bt_clear.setDefault(False)
+        self.bt_clear.setObjectName("bt_clear")
+        self.verticalLayout_9.addWidget(self.bt_clear)
         self.verticalLayout_9.setStretch(0, 3)
         self.verticalLayout_9.setStretch(1, 1)
         self.horizontalLayout.addWidget(self.frame_11)
         self.frame_5 = QtWidgets.QFrame(self.frame_6)
-        self.frame_5.setMinimumSize(QtCore.QSize(200, 0))
+        self.frame_5.setMinimumSize(QtCore.QSize(0, 0))
         self.frame_5.setMaximumSize(QtCore.QSize(200, 16777215))
-        self.frame_5.setStyleSheet("QLabel{\n"
-"    color: rgb(2, 218, 197);\n"
-"    font:12px;\n"
+        self.frame_5.setStyleSheet("QFrame{\n"
+"padding:5px  ;\n"
+"background-color: rgb(45, 45, 45);\n"
+"border-radius: 5px;\n"
+"}\n"
+"\n"
+"\n"
+"QLabel{\n"
+"    \n"
+"    color: rgb(255, 255, 255);\n"
+"    font:10px;\n"
 "    border:0 0 0 0\n"
 "}\n"
 "\n"
 "QLineEdit{\n"
 "    border:0 0 0 0;\n"
-"color: rgb(0, 170, 127);\n"
-"font:18px;\n"
-"}\n"
+"    color: rgb(0, 170, 127);\n"
+"    font:15px;\n"
+"background-color: rgb(45, 45, 45);\n"
+"    color: rgb(208, 102, 124);\n"
+"} \n"
+"\n"
 "")
         self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
-        self.gridLayout = QtWidgets.QGridLayout(self.frame_5)
-        self.gridLayout.setObjectName("gridLayout")
-        self.lb_wf = QtWidgets.QLabel(self.frame_5)
-        self.lb_wf.setObjectName("lb_wf")
-        self.gridLayout.addWidget(self.lb_wf, 3, 0, 1, 1)
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frame_5)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.lb_wi = QtWidgets.QLabel(self.frame_5)
         self.lb_wi.setStyleSheet("")
         self.lb_wi.setObjectName("lb_wi")
-        self.gridLayout.addWidget(self.lb_wi, 1, 0, 1, 1)
-        self.le_reduce = QtWidgets.QLineEdit(self.frame_5)
-        self.le_reduce.setObjectName("le_reduce")
-        self.gridLayout.addWidget(self.le_reduce, 4, 1, 1, 1)
-        self.le_wf = QtWidgets.QLineEdit(self.frame_5)
-        self.le_wf.setObjectName("le_wf")
-        self.gridLayout.addWidget(self.le_wf, 3, 1, 1, 1)
+        self.verticalLayout_3.addWidget(self.lb_wi)
         self.le_wi = QtWidgets.QLineEdit(self.frame_5)
         self.le_wi.setStyleSheet("")
+        self.le_wi.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.le_wi.setObjectName("le_wi")
-        self.gridLayout.addWidget(self.le_wi, 1, 1, 1, 1)
+        self.verticalLayout_3.addWidget(self.le_wi)
+        self.lb_wf = QtWidgets.QLabel(self.frame_5)
+        self.lb_wf.setObjectName("lb_wf")
+        self.verticalLayout_3.addWidget(self.lb_wf)
+        self.le_wf = QtWidgets.QLineEdit(self.frame_5)
+        self.le_wf.setStyleSheet("")
+        self.le_wf.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.le_wf.setObjectName("le_wf")
+        self.verticalLayout_3.addWidget(self.le_wf)
         self.lb_reduce = QtWidgets.QLabel(self.frame_5)
         self.lb_reduce.setObjectName("lb_reduce")
-        self.gridLayout.addWidget(self.lb_reduce, 4, 0, 1, 1)
+        self.verticalLayout_3.addWidget(self.lb_reduce)
+        self.le_reduce = QtWidgets.QLineEdit(self.frame_5)
+        self.le_reduce.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.le_reduce.setObjectName("le_reduce")
+        self.verticalLayout_3.addWidget(self.le_reduce)
         self.horizontalLayout.addWidget(self.frame_5)
-        self.horizontalLayout.setStretch(0, 4)
         self.horizontalLayout.setStretch(1, 2)
         self.horizontalLayout_3.addWidget(self.frame_6)
         self.horizontalLayout_3.setStretch(0, 4)
@@ -391,24 +462,24 @@ class Ui_MainWindow(object):
         self.cb_th_sm.setText(_translate("MainWindow", "Small"))
         self.cb_th_xm.setText(_translate("MainWindow", "Extra Small"))
         self.lb_quality.setText(_translate("MainWindow", "Quality"))
+        self.lb_quality_sd.setText(_translate("MainWindow", "60"))
         self.cb_optimize.setText(_translate("MainWindow", "Optimize"))
-        self.lb_optimize.setText(_translate("MainWindow", "100"))
         self.label_7.setText(_translate("MainWindow", "weight max"))
-        self.lb_weight.setText(_translate("MainWindow", "3333"))
+        self.lb_weight.setText(_translate("MainWindow", "300 KB"))
         self.selectFileButton.setText(_translate("MainWindow", "Select Image or Images"))
         self.bt_submit.setText(_translate("MainWindow", "Comprimir"))
         self.txt_result.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7pt;\">hola</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7pt;\"><br /></p></body></html>"))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">&gt;&gt; CREATE FOR ANTHONI PORTOCARRERO -&gt; </span><a href=\"https://github.com/anthonidev/kopiri\"><span style=\" font-size:8pt; text-decoration: underline; color:#0000ff;\">Git Hub</span></a></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">............................................................................</p></body></html>"))
         self.lb_state.setText(_translate("MainWindow", "STATE:"))
-        self.le_state.setText(_translate("MainWindow", "success"))
-        self.pushButton.setText(_translate("MainWindow", "Limpiar"))
-        self.lb_wf.setText(_translate("MainWindow", "Weight Final:"))
+        self.le_state.setText(_translate("MainWindow", "------"))
+        self.bt_clear.setText(_translate("MainWindow", "Clear"))
         self.lb_wi.setText(_translate("MainWindow", "Weight Initial:"))
-        self.le_reduce.setText(_translate("MainWindow", "66.99%"))
-        self.le_wf.setText(_translate("MainWindow", "5000MB"))
-        self.le_wi.setText(_translate("MainWindow", "7000MB"))
+        self.le_wi.setText(_translate("MainWindow", "--"))
+        self.lb_wf.setText(_translate("MainWindow", "Weight Final:"))
+        self.le_wf.setText(_translate("MainWindow", "--"))
         self.lb_reduce.setText(_translate("MainWindow", "Reduce in:"))
+        self.le_reduce.setText(_translate("MainWindow", "--"))
